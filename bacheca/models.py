@@ -5,7 +5,8 @@ from django.utils import timezone
 # Create your models here.
 class Post(models.Model):
   user = models.ForeignKey(User, on_delete=models.CASCADE)
-  datetime = models.DateTimeField(auto_now_add=True)
+  name = models.CharField(max_length=100)
+  surname = models.CharField(max_length=100)
   birth_date = models.DateField(null=True)
   title_date = models.DateField(null=True)
   vote = models.IntegerField(default=0)
