@@ -1,15 +1,24 @@
-Descrizione
-
-Il progetto prevede lo sviluppo di una bacheca di dati con DJango e Redis per una startup che si occupa di formazione e lavoro per migranti.
-
-Ti ha contattato una startup che si occupa di formazione e lavoro per migranti per implementare un sistema di creazione di certificati di formazione con una prova di esistenza su blockchain.
-
-Ti viene richiesto di creare un’applicazione web per permettere agli operatori di assegnare un titolo di studio digitale agli studenti, identificato da una stringa casuale.
-
-Dovrai fare in modo che ogni volta che un titolo di studio viene assegnato venga trasmessa una transazione su Ethereum Ropsten con l’hash SHA256 o MD5 del JSON contenente tutte le informazioni associate al titolo di studio e alla persona (es. Nome, Cognome, Data di nascita, Data conseguimento titolo, Votazione).
-
-Le funzionalità minime che dovrai implementare sono:
-
-Una pagina, alla quale soltanto gli amministratori possono accedere, dove è possibile assegnare un titolo di studio a uno studente
-Una pagina alla quale chiunque può accedere e inserire il codice identificativo di un titolo di studio per visualizzare tutte le informazioni associate e la transazione
-Un sistema di logging per memorizzare l’ultimo IP che ha avuto accesso alla piattaforma per un certo utente amministratore, in modo da mostrare un messaggio di avvertimento quando questo è diverso dal precedente
+<h1>Help page</h1>
+<p>The present site allows you to:
+  <ul>
+    <li>Insert a title for each partecipant</li>
+    <li>Validate the title through Blockchain (automatically)</li>
+    <li>Search for a certain title (by using the corresponding hash)</li>
+  </ul>
+<h2>Are you an admin?</h2>
+<ul>
+  <li>Just press the "ADD TITLE" button and enter credentials.</li>
+  <li>A warning message will appear at the top left if your IP is different with respect to your previous (is any) access
+  <li>Then create a new post and fill all fields except for hash and txId: they'll be filled automatically</li>
+</ul>
+<h2>Are you a user?</h2>
+You can:  
+<ul>
+  <li>See all the title posted</li>
+  <li>If you know the unique identifier (i.e. the hash)</li>
+  <ul>
+    <li>Click on the "SEARCH" button</li>
+    <li>Insert the hash</li>
+    <li>If the corresponding title exists, you will see all info about that title</li>
+  </ul>
+</ul>
