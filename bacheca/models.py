@@ -12,7 +12,7 @@ class Post(models.Model):
   title_date = models.DateField(null=True)
   vote = models.IntegerField(null=True, default=0)
   published_date = models.DateTimeField(null=True)
-  hash = models.CharField(max_length=32, default=None, null=True, blank=True)
+  hash = models.CharField(max_length=64, default=None, null=True, blank=True)
   txId = models.CharField(max_length=66, default=None, null=True, blank=True)
   
   def publish(self):
@@ -21,20 +21,3 @@ class Post(models.Model):
     
   def __str__(self):
     return self.name + ' ' + self.surname + ' ' + str(self.title_date)
-
-  # def get_ip(request):
-  #   # Function to capture IP Address of user
-  #   try:
-  #     x_forward = request.META.get("HTTP_X_FORWARDED_FOR")
-  #     if x_forward:
-  #       ip = x_forward.split(",")[0]
-  #     else:
-  #       ip = request.META.get("REMOTE_ADDR")
-  #   except:
-  #     ip = ""
-  #   return ip
-  
-  # def login_ip(sender, user, request, **kwargs):
-  #   user.ip_address = get_ip(request)
-  #   user.save()
-  #   user_logged_in.connect(login_ip)

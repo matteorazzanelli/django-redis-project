@@ -26,7 +26,7 @@ def search(request):
       post = form.save(commit=False)
       # Try to find the post with the title name
       try:
-        pk = Post.objects.get(title_name=post.title_name).pk
+        pk = Post.objects.get(hash=post.hash).pk
       # Error 404 if it does not exist instead of an exception
       except Post.DoesNotExist:
         pk = 0
@@ -37,18 +37,3 @@ def search(request):
 
 def help(request):
   return render(request, 'bacheca/help.html', {})
-
-# def newPost(request):
-#   if request.method == "POST":
-#     form = Post(request.POST)
-#     if form.is_valid():
-#       post = form.save(commit=False)
-#       post.author = request.user
-#       post.published_date = timezone.now()
-#       post.save()
-#       # post = Post.objects.filter()[0]
-#       post.writeOnChain()
-#       # return redirect('post_detail', pk=post.pk)
-#   else:
-#     form = Post()
-#   return render(request, 'blog/post_edit.html', {'form': form})
