@@ -21,7 +21,7 @@ class PostAdmin(admin.ModelAdmin):
     post = form.save(commit=False)
     jsoncontent = self.JsonfromContent(post) # take the json of the post
     post.hash = str(hashlib.sha256(jsoncontent.content).hexdigest()) # create the hash
-    # post.txId = sendTransaction(post.hash) # send transaction on ropsten
+    post.txId = sendTransaction(post.hash) # send transaction on ropsten
     post.save() # save the post effectively
 
   def JsonfromContent(self, post):
