@@ -1,17 +1,3 @@
-DEPENDENCIES
-
-REDIS
-client: pip install redis
-server: https://redis.io/download
-Troubleshooting:
-- Redis server requires linux. So if you are Windows you may be interested in running a "Virtual machine" on your laptop
-- Link: https://www.microsoft.com/it-it/p/ubuntu-1804/9n9tngvndl3q?activetab=pivot:overviewtab
-
-WEB3
-pip install web3
-Troubleshooting:
-- https://stackoverflow.com/questions/58287344/pip-install-web3-not-installing
-- https://docs.microsoft.com/en-us/answers/questions/136595/error-microsoft-visual-c-140-or-greater-is-require.html
-
-Ropsten Ethereum Faucet
-To have free rETH: https://faucet.dimensions.network/ and add your address
+Django==4.0.3
+redis==4.1.4
+web3==5.28.0
