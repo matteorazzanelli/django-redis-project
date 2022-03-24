@@ -18,8 +18,6 @@ def logged_in_message(sender, user, request, **kwargs):
     client.set(str(user),current_user_ip)
   else:
     if client.get(str(user)).decode('utf-8') != current_user_ip:
-      print(client.get(str(user)).decode('utf-8'))
-      print(current_user_ip)
       messages.warning(request, "IP has changed")
     else:
       messages.info(request, "Welcome back %s" %user)
